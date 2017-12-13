@@ -14,16 +14,16 @@
     
 ![这里写图片描述](http://img.blog.csdn.net/20171213125451943?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaXNKb2tlcg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
- <font size=3 face="黑体">  adapter：放一些adapter类，属于view层的
+        adapter：放一些adapter类，属于view层的
         api：放一些网络请求相关的类，如配置retrofit
-	    base：放一些activity、fragment、presenter的基类
-	    common：放一些全局都会用到的公共类，如application
-	    model：我的model层只放了bean类，分为request和response，跟传统mvp的model不同，传统mvp的model层是请求网络数据，然后p层拿到m层和v层的引用，使m层和v层交互，但那样代码量太多了，每一个请求都要创建一个model类，为了简介，我就把请求网络数据直接放在了p层，在后面的代码中你会看到。
-	    presenter：放presenter类
-	    utils：放一些工具类
-	    viewinterface：放view接口类
-	    viewimpl：放view实现类
-	    widget：放自定义view</font>
+	base：放一些activity、fragment、presenter的基类
+	common：放一些全局都会用到的公共类，如application
+	model：我的model层只放了bean类，分为request和response，跟传统mvp的model不同，传统mvp的model层是请求网络数据，然后p层拿到m层和v层的引用，使m层和v层交互，但那样代码量太多了，每一个请求都要创建一个model类，为了简介，我就把请求网络数据直接放在了p层，在后面的代码中你会看到。
+	presenter：放presenter类
+	utils：放一些工具类
+	viewinterface：放view接口类
+	viewimpl：放view实现类
+	widget：放自定义view
        
    <font size=3 face="黑体"> ------因为这个项目不大，界面不多，所以我采用此种分包，如果项目功能模块比较多的话，按功能模块分包比较好，结构清晰。下图是我之前做过的功能模块比较多的项目：</font>
         

@@ -33,14 +33,13 @@ public abstract class AWanBaseActivity<V extends IWanBaseView, P extends AWanBas
 
         setContentView(getViewLayoutId());
         ButterKnife.bind(this);
-        mProxy.onResume((V) this);
+        mProxy.onCreate((V) this);
         initData(savedInstanceState);
     }
 
     public abstract int getViewLayoutId();
 
     public abstract void initData(Bundle savedInstanceState);
-
 
     @Override
     protected void onDestroy() {

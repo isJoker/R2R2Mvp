@@ -55,7 +55,7 @@ public abstract class AWanBaseFragment<V extends IWanBaseView, P extends AWanBas
     @Override
     public void onResume() {
         super.onResume();
-        mProxy.onResume((V) this);
+        mProxy.onCreate((V) this);
     }
 
     @Override

@@ -65,7 +65,7 @@ public class PresenterProxy<V extends IWanBaseView, P extends AWanBasePresenter<
      * 绑定Presenter和view
      * @param mvpView
      */
-    public void onResume(V mvpView) {
+    public void onCreate(V mvpView) {
         getPresenter();
         if (mPresenter != null && !mIsBindView) {
             mPresenter.onBindView(mvpView);

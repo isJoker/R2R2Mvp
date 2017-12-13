@@ -1,7 +1,7 @@
 package com.jokerwan.mvpretrofitrxdemo.api;
 
 
-import com.jokerwan.mvpretrofitrxdemo.model.MoiveListResponse;
+import com.jokerwan.mvpretrofitrxdemo.model.response.MoiveListResponse;
 
 import io.reactivex.Flowable;
 import retrofit2.http.POST;

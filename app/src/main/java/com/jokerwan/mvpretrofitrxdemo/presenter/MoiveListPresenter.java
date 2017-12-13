@@ -3,8 +3,8 @@ package com.jokerwan.mvpretrofitrxdemo.presenter;
 import com.jokerwan.mvpretrofitrxdemo.api.ApiSubscriber;
 import com.jokerwan.mvpretrofitrxdemo.api.ApiUtils;
 import com.jokerwan.mvpretrofitrxdemo.base.AWanBasePresenter;
-import com.jokerwan.mvpretrofitrxdemo.model.MoiveListResponse;
-import com.jokerwan.mvpretrofitrxdemo.view.IMoiveListView;
+import com.jokerwan.mvpretrofitrxdemo.model.response.MoiveListResponse;
+import com.jokerwan.mvpretrofitrxdemo.viewinterface.IMoiveListView;
 
 /**
  * Created by JokerWan on 2017/12/11.

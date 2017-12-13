@@ -1,4 +1,4 @@
-package com.jokerwan.mvpretrofitrxdemo.factory;
+package com.jokerwan.mvpretrofitrxdemo.base.factory;
 
 import com.jokerwan.mvpretrofitrxdemo.base.AWanBasePresenter;
 import com.jokerwan.mvpretrofitrxdemo.base.IWanBaseView;

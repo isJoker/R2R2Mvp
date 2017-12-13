@@ -1,4 +1,4 @@
-package com.jokerwan.mvpretrofitrxdemo.model;
+package com.jokerwan.mvpretrofitrxdemo.model.response;
 
 import java.util.List;
 

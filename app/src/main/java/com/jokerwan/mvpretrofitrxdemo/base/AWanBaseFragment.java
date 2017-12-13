@@ -1,8 +1,11 @@
 package com.jokerwan.mvpretrofitrxdemo.base;
 
+import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.jokerwan.mvpretrofitrxdemo.base.factory.IWanPresenterFactory;
 import com.jokerwan.mvpretrofitrxdemo.base.factory.WanPresenterFactory;
@@ -12,51 +15,59 @@ import com.jokerwan.mvpretrofitrxdemo.base.proxy.PresenterProxy;
 import butterknife.ButterKnife;
 
 /**
- * Created by JokerWan on 2017/12/11.
+ * Created by JokerWan on 2017/12/13.
  * WeChat: wjc398556712
- * Function: 所有Activity的基类
+ * Function:
  */
 
-public abstract class AWanBaseActivity<V extends IWanBaseView, P extends AWanBasePresenter<V>>
-        extends AppCompatActivity implements IPresenterProxy<V,P> {
+public abstract class AWanBaseFragment<V extends IWanBaseView, P extends AWanBasePresenter<V>> extends Fragment implements IPresenterProxy<V,P> {
 
-    private static final String PRESENTER_SAVE_KEY = "presenter_save_key";
+    private static final String PRESENTER_SAVE_KEY_FRAGMENT = "presenter_save_key_fragment";
     //创建被代理对象,传入默认Presenter的工厂
     private PresenterProxy<V,P> mProxy = new PresenterProxy<>(WanPresenterFactory.<V,P>createFactory(getClass()));
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if(savedInstanceState != null){
-            mProxy.onRestoreInstanceState(savedInstanceState.getBundle(PRESENTER_SAVE_KEY));
-        }
 
-        setContentView(getViewLayoutId());
-        ButterKnife.bind(this);
-        initData(savedInstanceState);
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(getViewLayoutId(), container, false);
+        ButterKnife.bind(this, view);
+        return view;
     }
 
+    /**
+     * 获取子类布局id
+     * @return
+     */
     public abstract int getViewLayoutId();
-
-    public abstract void initData(Bundle savedInstanceState);
 
 
     @Override
-    protected void onResume() {
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        initData(savedInstanceState);
+    }
+    /**
+     * 初始化数据
+     */
+    public abstract void initData(@Nullable Bundle savedInstanceState);
+
+    @Override
+    public void onResume() {
         super.onResume();
         mProxy.onResume((V) this);
     }
 
     @Override
-    protected void onDestroy() {
+    public void onDestroy() {
         super.onDestroy();
         mProxy.onDestroy();
     }
 
     @Override
-    protected void onSaveInstanceState(Bundle outState) {
+    public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putBundle(PRESENTER_SAVE_KEY,mProxy.onSaveInstanceState());
+        outState.putBundle(PRESENTER_SAVE_KEY_FRAGMENT,mProxy.onSaveInstanceState());
     }
 
     @Override

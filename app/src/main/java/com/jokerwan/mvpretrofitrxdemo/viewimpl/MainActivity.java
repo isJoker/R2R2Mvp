@@ -9,9 +9,9 @@ import com.bumptech.glide.Glide;
 import com.jokerwan.mvpretrofitrxdemo.R;
 import com.jokerwan.mvpretrofitrxdemo.base.AWanBaseActivity;
 import com.jokerwan.mvpretrofitrxdemo.base.CreatePresenter;
-import com.jokerwan.mvpretrofitrxdemo.model.MoiveListResponse;
+import com.jokerwan.mvpretrofitrxdemo.model.response.MoiveListResponse;
 import com.jokerwan.mvpretrofitrxdemo.presenter.MoiveListPresenter;
-import com.jokerwan.mvpretrofitrxdemo.view.IMoiveListView;
+import com.jokerwan.mvpretrofitrxdemo.viewinterface.IMoiveListView;
 
 import butterknife.BindView;
 
@@ -26,11 +26,6 @@ public class MainActivity extends AWanBaseActivity<IMoiveListView,MoiveListPrese
     @Override
     public int getViewLayoutId() {
         return R.layout.activity_main;
-    }
-
-    @Override
-    public void initView() {
-
     }
 
     @Override

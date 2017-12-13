@@ -1,10 +1,10 @@
-package com.jokerwan.mvpretrofitrxdemo.proxy;
+package com.jokerwan.mvpretrofitrxdemo.base.proxy;
 
 import android.os.Bundle;
 
 import com.jokerwan.mvpretrofitrxdemo.base.AWanBasePresenter;
 import com.jokerwan.mvpretrofitrxdemo.base.IWanBaseView;
-import com.jokerwan.mvpretrofitrxdemo.factory.IWanPresenterFactory;
+import com.jokerwan.mvpretrofitrxdemo.base.factory.IWanPresenterFactory;
 
 /**
  * Created by JokerWan on 2017/12/11.

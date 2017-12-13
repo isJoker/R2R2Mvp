@@ -1,7 +1,7 @@
-package com.jokerwan.mvpretrofitrxdemo.view;
+package com.jokerwan.mvpretrofitrxdemo.viewinterface;
 
 import com.jokerwan.mvpretrofitrxdemo.base.IWanBaseView;
-import com.jokerwan.mvpretrofitrxdemo.model.MoiveListResponse;
+import com.jokerwan.mvpretrofitrxdemo.model.response.MoiveListResponse;
 
 /**
  * Created by JokerWan on 2017/12/11.

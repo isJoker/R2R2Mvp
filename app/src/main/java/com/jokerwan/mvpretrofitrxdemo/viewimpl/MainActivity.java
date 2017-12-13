@@ -16,7 +16,8 @@ import com.jokerwan.mvpretrofitrxdemo.viewinterface.IMoiveListView;
 import butterknife.BindView;
 
 @CreatePresenter(MoiveListPresenter.class)
-public class MainActivity extends AWanBaseActivity<IMoiveListView,MoiveListPresenter> implements IMoiveListView {
+public class MainActivity extends AWanBaseActivity<IMoiveListView,MoiveListPresenter>
+        implements IMoiveListView {
 
     @BindView(R.id.tv_moive_name)
     TextView tvMoiveName;
@@ -33,7 +34,6 @@ public class MainActivity extends AWanBaseActivity<IMoiveListView,MoiveListPrese
         if (null != savedInstanceState) {
             // TODO: 2017/12/11 数据恢复
         }
-
         getPresenter().getMoiveList();
 
     }
@@ -54,5 +54,4 @@ public class MainActivity extends AWanBaseActivity<IMoiveListView,MoiveListPrese
     public void onLoadFail(String msg) {
         Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
     }
-
 }

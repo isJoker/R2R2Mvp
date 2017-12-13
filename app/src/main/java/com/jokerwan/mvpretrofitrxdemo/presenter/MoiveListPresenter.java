@@ -16,6 +16,8 @@ public class MoiveListPresenter extends AWanBasePresenter<IMoiveListView> {
 
     public void getMoiveList(){
 
+        getView().onLoading();
+
         wApi.getMoiveList()
                 .compose(ApiUtils.getScheduler())
                 .subscribe(new ApiSubscriber<MoiveListResponse>() {
@@ -31,10 +33,5 @@ public class MoiveListPresenter extends AWanBasePresenter<IMoiveListView> {
                         getView().onLoadFail(t.getMessage());
                     }
                 });
-    }
-
-    @Override
-    public void onDestroyPersenter() {
-        super.onDestroyPersenter();
     }
 }

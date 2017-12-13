@@ -59,16 +59,28 @@ public abstract class AWanBaseActivity<V extends IWanBaseView, P extends AWanBas
         outState.putBundle(PRESENTER_SAVE_KEY,mProxy.onSaveInstanceState());
     }
 
+    /**
+     * 子类可以重新该方法实现自己的presenter工厂
+     * @param presenterFactory
+     */
     @Override
     public void setPresenterFactory(IWanPresenterFactory<V, P> presenterFactory) {
         mProxy.setPresenterFactory(presenterFactory);
     }
 
+    /**
+     * 子类可以重新该方法获取自己的presenter工厂
+     * @return
+     */
     @Override
     public IWanPresenterFactory<V, P> getPresenterFactory() {
         return mProxy.getPresenterFactory();
     }
 
+    /**
+     * 子类可以重新该方法获取presenter
+     * @return
+     */
     @Override
     public P getPresenter() {
         return mProxy.getPresenter();

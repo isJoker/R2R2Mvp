@@ -36,7 +36,7 @@
 		
    自2016年起，mvp框架一度兴起，越来越多的安卓开发者都选择用mvp框架来开发app。mvp结合rxjava和retrofit 简直爽的不要不要的，自从用了mvp结合rxjava和retrofi，代码简洁了，逻辑也清晰了，调用也优雅了，维护成本也低利了。公司的这个项目我是用mvp+rxjava2+retrofit2+butterknife。
    
-   此mvp框架用到了注解、工厂模式、代理模式来解决代码冗余、内存泄露（P在请求网络数据时，view(Activity或者Fragment)界面销毁，导致P仍然持有view的引用）、presenter生命周期以及数据存储问题；通过泛型将view和presenter绑定，可在view中直接调用getPresenter()获取presenter来请求网络数据，在presenter中可以直接通过getView获取view()来更新界面。请求网络用的是封装后的rxjava+retrofit，添加了网络请求和响应拦截器，网络请求和响应json可直接在在Android Studio中的Logcat中一目了然。
+   此mvp框架用到了注解、工厂模式、代理模式来解决代码冗余、内存泄露（P在请求网络数据时，view(Activity或者Fragment)界面销毁，导致P仍然持有view的引用）、presenter生命周期以及数据存储问题；通过泛型将view和presenter绑定，可在view中直接调用getPresenter()获取presenter来请求网络数据，在presenter中可以直接通过调用getView()获取view来更新界面。请求网络用的是封装后的rxjava+retrofit，添加了网络请求和响应拦截器，网络请求和响应json可直接在在Android Studio中的Logcat中一目了然。
    
    具体的源码实现我就不一一介绍了，感兴趣的朋友可以下载源码，自行查看；框架源码链接(https://github.com/isJoker/R2R2Mvp)。	
 

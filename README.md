@@ -43,6 +43,18 @@
 ----------
 
  <font size=5 face="黑体">3．使用</font>
+ 
+ <font size=3 face="黑体">你的api</font>
+ 
+```
+public interface WApi {
+
+    //获取电影列表
+    @POST("/PageSubArea/TrailerList.api")
+    Flowable<MoiveListResponse> getMoiveList();
+
+}
+```
 	
  <font size=3 face="黑体">首先，先定义一个view接口IMoiveListView</font>
 		
@@ -71,6 +83,7 @@ public interface IMoiveListView extends IWanBaseView{
  * WeChat: wjc398556712
  * Function:
  */
+ 
 @CreatePresenter(MoiveListPresenter.class)
 public class MainActivity extends AWanBaseActivity<IMoiveListView,MoiveListPresenter>
         implements IMoiveListView {

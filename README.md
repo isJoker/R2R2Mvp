@@ -84,7 +84,7 @@ public interface IMoiveListView extends IWanBaseView{
  * Function:
  */
  
-@CreatePresenter(MoiveListPresenter.class)
+@CreatePresenter(MoiveListPresenter.class)//不要忘了这段代码
 public class MainActivity extends AWanBaseActivity<IMoiveListView,MoiveListPresenter>
         implements IMoiveListView {
 
